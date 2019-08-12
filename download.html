@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下载图片保存至本地</title>
+    <style>
+        img{
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+    <img class=".iamge" src="./src/baobi.jpg">
+</head>
+<body>
+    <script>
+        function downloadImage(selector, name) {
+            // selector 为要img 标签类或id名，name用来指定下载图片的名称
+            const image = new Image();
+            // 解决跨域 Canvas 污染问题
+            image.setAttribute('crossOrigin', 'anonymous');
+            image.onload = () => {
+                const canvas = document.createElement('canvas');
+                canvas.width = image.width;
+                canvas.height = image.height;
+
+                const context = canvas.getContext('2d');
+                context.drawImage(image, 0, 0, image.width, image.height);
+                const url = canvas.toDataURL('image/png');
+                // 生成一个a元素
+                const a = document.createElement('a');
+                // 创建一个单击事件
+                const event = new MouseEvent('click');
+
+                // 将a的download属性设置为我们想要下载的图片名称，若name不存在则使用‘下载图片名称’作为默认名称
+                a.download = name || '下载图片名称';
+                // 将生成的URL设置为a.href属性
+                a.href = url;
+
+                // 触发a的单击事件
+                a.dispatchEvent(event);
+            };
+            // image.src = document.querySelector(selector).src;
+            // image.src = "./src/baobi.jpg";
+            image.src = document.getElementsByTagName('img')[0].src
+        }
+        function save(){
+            downloadImage('.image','');
+        }
+    </script>
+    <button onclick="save()">下载图片</button>
+</body>
+</html>
