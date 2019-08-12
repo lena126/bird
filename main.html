@@ -8,6 +8,26 @@
     <title>Document</title>
 </head>
 <body>
-    <div>this is main page!</div>
+    <div>分享功能的实现，主要是对其开放平台地址的使用，一般PC和手机浏览器使用同样支持</div>
+    <script>
+    shareTwitter = () => {
+    const twTitle = 'Let\' Build Bitcoin Together!';
+    const twUrl = 'https://www.baidu.com';
+    const imgUrl = `${dataStore.shareData.shareImage}`;
+    window.open(
+      `https://twitter.com/intent/tweet?text=${twTitle}&url=${twUrl}&photo=${imgUrl}`,
+      '_blank'
+    );
+  }
+  shareWeibo = () => {
+    const wbTitle = 'Let\' Build Bitcoin Together!';
+    const wbUrl = 'https://www.baidu.com'; // 要分享的链接地址
+    const imgUrl = `${dataStore.shareData.shareImage}`;
+    window.open(
+      `http://service.weibo.com/share/share.php?appkey=&title=${wbTitle}&url=${wbUrl}&pic=${imgUrl}`,
+      '_blank'
+    );
+  }
+    </script>
 </body>
 </html>
