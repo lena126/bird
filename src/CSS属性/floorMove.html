@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <title>楼层滚动效果</title>
+    <style>
+        body,html,head,ul{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            border:1px dotted #909090;
+        }
+
+        li{
+            width: 1000px;
+            height: 400px;
+            border:1px solid #666;
+            list-style: none;
+            margin:0 auto;
+        }
+        li:nth-child(1){
+            height: 200px;
+            border:1px solid yellow;
+        }
+        li:nth-child(2){
+            height: 200px;
+            border:1px solid red;
+        }
+        li:nth-child(4){
+            height: 600px;
+            border:1px solid blue;
+        }
+
+        #lift{
+            position:fixed;
+            left:2px;
+            top:50%;
+            transform: translateY(-50%);
+            border:1px dotted #909090;
+            width: 55px;
+            display: none;
+        }
+        .ulTip{
+
+        }
+        .liTip{
+            width: 50px !important;
+            height: 50px !important;
+            background: rgba(1,1,1,.3);
+        }
+        .floorHover{
+            background: rgba(50, 210, 57, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <ul id="container">
+        <li class="floor">第1层</li>
+        <li class="floor">第2层</li>
+        <li class="floor third">第3层 </li>
+        <li class="floor">第4层</li>
+        <li class="floor">第5层</li>
+        <li class="floor">第6层</li>
+    </ul>
+    <div id="lift">
+        <ul class="ulTip">
+            <li class="liTip">
+                <a href="javascript:;" class="lift_btn">
+                    <span class="lift_btn_txt">第1层</span>
+                </a>
+            </li>
+            <li class="liTip">
+                <a href="javascript:;" class="lift_btn">
+                    <span class="lift_btn_txt">第2层</span>
+                </a>
+            </li>
+            <li class="liTip">
+                <a href="javascript:;" class="lift_btn">
+                    <span class="lift_btn_txt">第3层</span>
+                </a>
+            </li>
+            <li class="liTip">
+                <a href="javascript:;" class="lift_btn">
+                    <span class="lift_btn_txt">第4层</span>
+                </a>
+            </li>
+            <li class="liTip">
+                <a href="javascript:;" class="lift_btn">
+                    <span class="lift_btn_txt">第5层</span>
+                </a>
+            </li>
+            <li class="liTip">
+                <a href="javascript:;" class="lift_btn">
+                    <span class="lift_btn_txt">第6层</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+       $(()=>{
+           $(window).scroll(()=>{
+               var scrollTop=$(window).scrollTop();
+               var offsetTop=$(".third:first").offset().top;
+               if(offsetTop<=scrollTop+innerHeight/2){
+                   $("#lift").show();
+               }else{
+                   $("#lift").hide();
+               }
+               var $floors=$('.floor');
+               for(var i=0;i<$floors.length;i++){
+                   var $f=$($floors[i]);
+                   if($f.offset().top>scrollTop+innerHeight/2){
+                       break;
+                   }
+               }
+                $(`#lift>ul>li:eq(${i-1})`)
+                    .addClass('floorHover')
+                    .siblings().removeClass('floorHover');
+           })
+           $("#lift>ul").on("click","a.lift_btn",function(){
+               var $a=$(this);
+               var i=$a.parent().index();
+               var offsetTop=$(`.floor:eq(${i})`).offset().top;
+               $("html").stop(true).animate({
+                   scrollTop:offsetTop-50
+               },500)
+           })
+       })
+
+    </script>
+</body>
+</html>

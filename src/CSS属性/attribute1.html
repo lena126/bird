@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@site_username">
+    <meta name="twitter:title" content="Top 10 Things Ever">
+    <meta name="twitter:description" content="Up than 200 characters.">
+    <meta name="twitter:creator" content="@creator_username">
+    <meta name="twitter:image" content="pic.twitter.com/JQsxPo8j8G">
+    <meta name="twitter:domain" content="YourDomain.com">
+    <title>Document</title>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+            padding:20px;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            cursor: crosshair;
+            background: #0e7889;
+            color:white;
+            font-size:20px;
+            position: absolute;
+            top:70%;
+            left:50%;
+            transform: translateY(-50%) translateX(-50%);
+            display: none;
+        }
+        #canvas{
+            width: 100vw;
+            height: 100vh;
+        }
+        table{
+            width: 200px;
+            height: 200px;
+            border:2px solid #909090;
+            position: absolute;
+            top:150px;
+            right:50%;
+            z-index: 20;
+        }
+        .divText{
+            padding:20px;
+            background: #909090;
+            color:red;
+            font-size: 30px;
+            font-style: oblique;
+            font-style: italic;
+        }
+        .tabBox{
+
+        }
+    </style>
+</head>
+<body>
+<div>
+<!--    <a href="javascript:window.open('http://twitter.com/home?status='+'My Item  '+encodeURIComponent(document.location.href)+' '+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)">-->
+<!--       twitter-->
+<!--    </a>-->
+</div>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet">
+    <p lang="en" dir="ltr">
+        ceshi
+        <a href="https://t.co/1eJr3Gc9hp">
+            https://t.co/1eJr3Gc9hp
+        </a>
+    </p>
+    &mdash; 丽娜 (@kWfizEnkOn36pZw)
+    <a href="https://twitter.com/kWfizEnkOn36pZw/status/1161887309630824450?ref_src=twsrc%5Etfw">
+        August 15, 2019
+    </a>
+</blockquote>
+
+
+<blockquote class="twitter-tweet"><p lang="und" dir="ltr">
+    <a href="https://t.co/JQsxPo8j8G">pic.twitter.com/JQsxPo8j8G</a>
+        </p>&mdash; 丽le娜 (@kWfizEnkOn36pZw)
+    <a href="https://twitter.com/kWfizEnkOn36pZw/status/1161873113505648640?ref_src=twsrc%5Etfw">August 15, 2019</a>
+</blockquote>
+
+<table>
+    <tr>
+        <td>
+            <div class="divText">.nuisance jjij奇偶防静电死哦放假哦</div>
+        </td>
+    </tr>
+</table>
+
+
+<canvas id="canvas"></canvas>
+    <div class="box" />
+    <script>
+        var div=document.getElementsByClassName('box')[0];
+
+        document.onmousemove = (e) => {
+            div.innerHTML=`
+            clienX:${e.clientX} &nbsp; clientY:${e.clientY} <br/>
+            layerX:${e.layerX} &nbsp; layerY:${e.layerY} <br/>
+            movementX:${e.movementX} &nbsp; movementY:${e.movementY} <br/>
+            pageX:${e.pageX} &nbsp; pageY:${e.pageY} <br/>
+            screenX:${e.screenX} &nbsp; screenY:${e.screenY} <br/>
+            x:${e.x} &nbsp; y:${e.y} <br/>
+            `;
+        }
+        document.onmouseenter = (e) => {
+            console.log('document',e); // eslint-disable-line
+            var tabBox = document.getElementsByClassName('tabBox');
+            console.log('tabBox', tabBox); // eslint-disable-line
+        }
+        document.onmousedown = (e) => {
+            var canvas=document.getElementById("canvas");
+            var ctx=canvas.getContext("2d");
+            ctx.beginPath();
+            var x=e.x/1439*300;
+            var y=e.y/780*150;
+            ctx.arc(x,y,1,1,2*Math.PI);
+            ctx.fillStyle="red";//填充颜色,默认是黑色
+            ctx.fill();//画实心圆
+            ctx.stroke();
+        }
+
+        var pElement = document.getElementById("canvas");
+        parentObj = pElement.offsetParent;
+    </script>
+</body>
+</html>
+
+
