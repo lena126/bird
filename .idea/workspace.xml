@@ -100,7 +100,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="95">
-                <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+                <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
               </first_editor>
               <second_editor />
             </state>
@@ -221,12 +221,12 @@
       <workItem from="1565603257081" duration="14823000" />
       <workItem from="1565794440165" duration="1040000" />
       <workItem from="1565796765037" duration="427000" />
-      <workItem from="1565834706729" duration="17602000" />
+      <workItem from="1565834706729" duration="17729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33892000" />
+    <option name="totallyTimeSpent" value="34019000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -241,7 +241,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22621565" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22621565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -253,7 +253,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961586" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32961586" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32961586" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32961586" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -352,7 +352,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="95">
-            <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+            <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
           </first_editor>
           <second_editor />
         </state>
