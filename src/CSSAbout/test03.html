@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>纯css实现轮播图效果</title>
+    <style>
+        @keyframes move{
+            0%{
+                transform:translateY(-20px);
+            }
+            100%{
+                transform:translateY(-100px);
+            }
+
+        }
+        .wrap{width:500px; height:220px;
+            position:relative; margin:50px auto;
+            border:5px solid #f00;
+            overflow:hidden;
+        }
+        ul,li{margin:0; padding:0; list-style:none;}
+        img{vertical-align: top; border:none;}
+        .list{width:500%;  animation: move 5s linear infinite}
+        .list li{float:left; width:500px; height:320px;}
+        .list img{width:100%; height:100%;}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="list">
+        <li><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></li>
+        <li><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></li>
+        <li><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></li>
+        <li><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></li>
+        <li><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></li>
+    </ul>
+</div>
+</body>
+</html>

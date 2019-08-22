@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes rowup {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(0, -240px, 0);
+                transform: translate3d(0, -240px, 0);
+            }
+        }
+        .list{
+            width: 1300px;
+            border: 1px solid #999;
+            margin: 20px auto;
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            font-size: 15px;
+            font-family: 'Microsoft Yahei';
+        }
+
+        .list .rowup{
+            -webkit-animation: 4s rowup linear infinite normal;
+            animation: 4s rowup linear infinite normal;
+            position: relative;
+        }
+        img{
+            width: 1000px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="list">
+    <div class="cc rowup">
+        <div class="s">
+            <div class="item"><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></div>
+            <div class="item"><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></div>
+        </div>
+<!--        <div class="s">-->
+<!--            <div class="item"><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></div>-->
+<!--            <div class="item"><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png"></div>-->
+<!--        </div>-->
+    </div>
+</div>
+
+</body>
+</html>

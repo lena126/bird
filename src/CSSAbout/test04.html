@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>一组图片循环且首尾相连的滚动效果</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <style>
+        #bg{
+            width:940px;height:500px;
+            border:1px solid red;
+        }
+        #sm{/*滚动对象样式*/
+            overflow:hidden;/*隐藏Div中多余的内容，增加图片会一起滚动*/
+            width:1240px;height:380px;
+            margin:0 auto;
+            padding-top:30px;
+        }
+        img{
+            width:1180px;height:400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg">
+        <div id="sm">
+            <table>
+                <tr>
+                    <td id="Pic1">
+                        <table>
+                            <tr>
+                                <td><img src="https://img.bafang.com/cdn/assets/imgs/MjAxOTg/4275341DA8235C168AE47011AC7640A9.png" /></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td id="Pic2"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+<!--下面内容的客户端脚本不可放置在页面头部-->
+
+<script>
+
+    $('#Pic2')[0].innerHTML=Pic1.innerHTML;//复制一组图片，但被隐藏
+    function scrolltop(){//定义向左移动的方法
+        sm.scrollTop++;//改变层的水平坐标，实现向左移动
+        if(sm.scrollTop>=Pic1.scrollHeight)//需要复位
+            sm.scrollTop=0;//层的位置复位，浏览器窗口的宽度有限的
+    }
+
+    var MyMar=setInterval(scrolltop,5); //定时器，方法名后不可加()
+
+    // Pic2.innerHTML=Pic1.innerHTML;//复制一组图片，但被隐藏
+    // function scrolltoleft(){//定义向左移动的方法
+    //     sm.scrollLeft++;//改变层的水平坐标，实现向左移动
+    //     if(sm.scrollLeft>=Pic1.scrollWidth)//需要复位
+    //         sm.scrollLeft=0;//层的位置复位，浏览器窗口的宽度有限的
+    // }
+    //
+    // var MyMar=setInterval(scrolltoleft,4); //定时器，方法名后不可加()
+    //
+    // function mouseover(x){//放大图片
+    //     x.style.width="210";
+    //     x.style.height="256"
+    //     x.style.cursor="pointer"
+    // }
+    // function mouseout(x){//图片复原
+    //     x.style.width="105";
+    //     x.style.height="128"
+    // }
+
+</script>
+</body>
+</html>

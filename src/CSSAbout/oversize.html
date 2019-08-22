@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <title>放大镜功能</title>
+    <style>
+        .main-container{
+            width: 800px;
+            height: 600px;
+            border:1px solid #909090;
+        }
+        .big-show{
+            width: 400px;
+            height: 300px;
+            background: palegoldenrod;
+            margin:0 auto;
+        }
+        .bottom{
+            width: 550px;
+            height: 100px;
+            margin:0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .small-container{
+            width: 400px;
+            height: 80px;
+            overflow: hidden;
+            margin: 20px auto 0 auto;
+        }
+        .small-show{
+            width: 450px;
+            height: 80px;
+            float: left;
+        }
+        .pic-small{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            list-style: none;
+            color:white;
+            text-align:center;
+            line-height:50px;
+            margin-left:30px;
+        }
+        .pic-small{
+
+        }
+        .pic-small:first-child{
+            margin-left:-30px;
+        }
+        button{
+            width: 30px;
+            height: 50px;
+            background: #999999;
+            color:white;
+            line-height:30px;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="big-show"><img id="imgPic" src=""></div>
+        <div class="bottom">
+            <button class="left-go">《</button>
+            <div class="small-container">
+                <ul class="small-show"></ul>
+            </div>
+            <button class="right-go">》</button>
+        </div>
+    </div>
+    <script>
+        $(()=>{
+            const imgList = [
+                'https://img.bafang.com/cdn/assets/imgs/MjAxOTg/0047CEAF629DEE51DBCC28BD867964A1.png',
+                'https://img.bafang.com/cdn/assets/imgs/MjAxOTg/155C9EEEB55E9DDE29D4F71118221990.png',
+                'https://img.bafang.com/cdn/assets/imgs/MjAxOTg/0047CEAF629DEE51DBCC28BD867964A1.png',
+                'https://img.bafang.com/cdn/assets/imgs/MjAxOTg/155C9EEEB55E9DDE29D4F71118221990.png',
+                'https://img.bafang.com/cdn/assets/imgs/MjAxOTg/0047CEAF629DEE51DBCC28BD867964A1.png',
+                'https://img.bafang.com/cdn/assets/imgs/MjAxOTg/155C9EEEB55E9DDE29D4F71118221990.png'
+            ];
+            let html='';
+            for(pic of imgList){
+                html+=` <li class="pic-small">
+                            <img
+                            data-md="${pic}"
+                            src="${pic}"
+                            >
+                        </li>`;
+            }
+            $('.small-show')[0].innerHTML=html;
+            $('#imgPic')[0].src=imgList[0];
+            $('.big-show')[0].style.backgroundImage=imgList[0];
+
+            $(".left-go").click(()=>{
+                console.log('click'); // eslint-disable-line
+            });
+            $(".right-go").click(()=>{
+
+            });
+
+        })
+    </script>
+</body>
+</html>
