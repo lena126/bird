@@ -3,5 +3,5 @@
 ### PC分享功能
 - [分享效果](https://lena126.github.io/bird/index.html)  [查看代码](https://github.com/lena126/bird/blob/master/index.html)
 - [保存图片](https://lena126.github.io/bird/download.html)  [查看代码](https://github.com/lena126/bird/blob/master/download.html)
-- [楼层滚动](https://lena126.github.io/bird/src/CSSAbout/floorMove.html)   [查看代码](https://github.com/lena126/bird/blob/master/src/CSSAbout/floorMove.html)
-- [动态加载](https://lena126.github.io/bird/src/CSSAbout/loadingout.html) [查看代码](https://github.com/lena126/bird/blob/master/src/CSSAbout/loadingout.html)
+- [楼层滚动](https://lena126.github.io/bird/src/CSSAbout/floorMove.html)   [查看代码](https://github.com/lena126/bird/blob/master/src/CSSAbout/res-floorMove.html)
+- [动态加载](https://lena126.github.io/bird/src/CSSAbout/loadingout.html) [查看代码](https://github.com/lena126/bird/blob/master/src/CSSAbout/res-loadingout.html)
