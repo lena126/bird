@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+<input type="text" id="copyValue" />
+<button type="button" data-clipboard-target='#copyValue' id="bar">复制</button>
+<script>
+    const clipboard = new Clipboard('button');
+    clipboard.on('success',function(e){
+        e.clearSelection(); //清除输入框
+        $('#bar').focus();
+        $('#bar').select();
+        $('#bar').text('已复制');
+        return false;
+    });
+    clipboard.on('error',function(e){
+        e.clearSelection();
+        alert('复制失败');
+    });
+</script>
+</body>
+</html>

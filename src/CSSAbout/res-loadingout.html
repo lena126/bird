@@ -35,24 +35,6 @@
             height: 600px;
             border:1px solid blue;
         }
-
-        #lift{
-            position:fixed;
-            left:2px;
-            top:50%;
-            transform: translateY(-50%);
-            border:1px dotted #909090;
-            width: 55px;
-            /*display: none;*/
-        }
-        .ulTip{
-
-        }
-        .liTip{
-            width: 50px !important;
-            height: 50px !important;
-            background: rgba(1,1,1,.3);
-        }
         .floorHover{
             background: rgba(50, 210, 57, 0.3);
         }
@@ -96,18 +78,18 @@
             animation-delay: 0.4s;
         }
         .run{
-            animation: myfirst 3s linear;
-            -moz-animation: myfirst 1s;	/* Firefox */
-            -webkit-animation: myfirst 1s ease-in-out;	/* Safari 和 Chrome */
-            -o-animation: myfirst 1s  ease-in-out;	/* Opera */
+            animation: myfirst 1s linear;
+            -moz-animation: myfirst .7s;	/* Firefox */
+            -webkit-animation: myfirst .7s ease-in-out;	/* Safari 和 Chrome */
+            -o-animation: myfirst .7s  ease-in-out;	/* Opera */
             list-style: none;
             background: #109985;
-            animation-delay: 0.4s;
+            /*animation-delay: 0.4s;*/
         }
 
         @keyframes myfirst
         {
-            from {margin-top: 50px;opacity: 0.3;}
+            from {margin-top: 80px;opacity: 0;}
             to {margin-top: 20px;opacity: 1;}
         }
     </style>
@@ -127,49 +109,17 @@
         </ul>
     </div>
     <div class="floor">第四层
+    </div>
+    <div class="floor">第5层
         <ul class="four_ul_container">
             <li class="four_li_tab">1</li>
             <li class="four_li_tab">2</li>
             <li class="four_li_tab">3</li>
             <li class="four_li_tab">4</li>
         </ul>
+    <a href="https://www.sensetime.com/" target="-_blank">类似效果</a>
     </div>
-    <div class="floor">第5层</div>
     <div class="floor">第6层</div>
-</div>
-<div id="lift">
-    <ul class="ulTip">
-        <li class="liTip">
-            <a href="javascript:;" class="lift_btn">
-                <span class="lift_btn_txt">第一层</span>
-            </a>
-        </li>
-        <li class="liTip">
-            <a href="javascript:;" class="lift_btn">
-                <span class="lift_btn_txt">第2层</span>
-            </a>
-        </li>
-        <li class="liTip">
-            <a href="javascript:;" class="lift_btn">
-                <span class="lift_btn_txt">第3层</span>
-            </a>
-        </li>
-        <li class="liTip">
-            <a href="javascript:;" class="lift_btn">
-                <span class="lift_btn_txt">第4层</span>
-            </a>
-        </li>
-        <li class="liTip">
-            <a href="javascript:;" class="lift_btn">
-                <span class="lift_btn_txt">第5层</span>
-            </a>
-        </li>
-        <li class="liTip">
-            <a href="javascript:;" class="lift_btn">
-                <span class="lift_btn_txt">第6层</span>
-            </a>
-        </li>
-    </ul>
 </div>
 <script>
     $(()=>{
@@ -204,16 +154,15 @@
             scrollTop:offsetTop-150
         },500)
     })
+    // 当前区域被加载出时，显示
     const loadNow=$('.four_ul_container').offset().top;
-    console.log('four_ul_container',loadNow); // eslint-disable-line
     window.addEventListener("scroll",function(e){
         var t =document.documentElement.scrollTop||document.body.scrollTop;
-        if(loadNow>t+innerHeight){
+        if(loadNow>t+innerHeight/1.1){
             $('.four_li_tab').addClass('run');
-            console.log('come in在范围',innerHeight); // eslint-disable-line
+            console.log('当前区域在可视窗口范围'); // eslint-disable-line
         }
         console.log(t);
-
     });
 </script>
 </body>

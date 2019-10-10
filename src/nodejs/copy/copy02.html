@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="target">文本显示内容</div>
+<button type="button" id="bar" onclick="copy()">复制</button>
+
+<script>
+    // 拷贝文本内容
+    function copyText(str) {
+        const oInput = document.createElement('input');
+        oInput.value = str;
+        document.body.appendChild(oInput);
+        oInput.select();
+        document.execCommand('Copy');
+        oInput.style.display = 'none';
+        document.body.removeChild(oInput);
+    }
+    function copy(){
+        copyText('要被复制的内容');
+    }
+
+</script>
+</body>
+</html>
