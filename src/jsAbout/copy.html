@@ -17,6 +17,7 @@
 
 <div class="target">文本显示内容</div>
 <button type="button" onclick="copy()">复制2</button>
+<button type="button" onclick="copyData()">复制3</button>
 <script>
     <!--   借助插件 -->
     const clipboard = new Clipboard('button');
@@ -45,6 +46,12 @@
     }
     function copy(){
         copyText('要被复制的内容');
+    }
+
+    // 原生方法实现
+    function copyData(){
+        document.getElementById('copyValue').select();
+        document.execCommand('copy');
     }
 </script>
 </body>
