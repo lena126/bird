@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1, .box2 {
+            position: relative;
+            /*z-index: auto;*/
+            z-index: 0;
+            opacity:0.8;
+            font-size:20px;
+            color:red;
+            text-align: right;
+        }
+        .child1 {
+            width: 200px;
+            height: 400px;
+            background: #168bf5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        .child2 {
+            width: 400px;
+            height: 200px;
+            background: #32c292;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="child1">child1 z-index: 2</div>
+</div>
+
+<div class="box2">
+    <div class="child2">child2 z-index: 1</div>
+</div>
+<!--普通元素设置position属性为非static值并设置z-index属性为具体数值，产生层叠上下文。
+    z-index就是默认的auto，也就是0级别
+    不产生堆叠上下文是，处于根元素所在的堆叠上下文，所以其显示由z-index属性决定，大的就在上面。
+    产生各自的堆叠上下文，无z-index属性时，当元素的层叠水平一致、层叠顺序相同的时候，在DOM流中处于后面的元素会覆盖前面的元素。-->
+</body>
+</html>

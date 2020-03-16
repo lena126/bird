@@ -36,7 +36,7 @@
 	border:  5px solid #fff;
 	left: -5px;
 	background: #fff;
-	
+
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);
 	-moz-transform: translatez(0);
@@ -78,7 +78,7 @@
 
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
-	display: inline-block;
+	display: none;
 	*zoom: 1;
 	*display: inline;
 }
@@ -106,11 +106,13 @@
 .bx-wrapper .bx-prev {
 	left: 10px;
 	background: url(images/controls.png) no-repeat 0 -32px;
+	display:none;
 }
 
 .bx-wrapper .bx-next {
 	right: 10px;
 	background: url(images/controls.png) no-repeat -43px -32px;
+	display:none;
 }
 
 .bx-wrapper .bx-prev:hover {

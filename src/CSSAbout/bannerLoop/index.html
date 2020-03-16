@@ -7,14 +7,25 @@
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="js/dobxslider.js"></script>
-</head>
-<body>
-<div class="slide">
-	<ul class="bxslider">
-	  <li><a href="###"><img src="images/hillside.jpg" /></a></li>
-	  <li><a href="###"><img src="images/houses.jpg" /></a></li>
-	  <li><a href="###"><img src="images/picto.png" /></a></li>
-	</ul>
-</div><!--.slide-->
-</body>
+	<script>
+		function isWeixinCient() {
+			var ua = window.navigator.userAgent.toLowerCase();
+			var isAndroid = ua.indexOf('android') > -1 || ua.indexOf('adr') > -1; //android终端
+			if(isAndroid) {
+				console.log('android');
+				if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+					console.log('微信');
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				console.log('he');
+			}
+		}
+		if(isWeixinCient()){
+			console.log('haha');
+		}
+	</script>
 </html>
+

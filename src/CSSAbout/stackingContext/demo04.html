@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>层叠上下文</title>
+    <style>
+        .container1,.container2{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            color:#fff;
+            text-align: right;
+        }
+        .container1{
+            background: royalblue;
+            left:300px;
+        }
+        .container2{
+            background: rosybrown;
+        }
+        .child1,.child2{
+            width: 400px;
+            height: 100px;
+            margin-bottom:10px;
+            text-align:left;
+        }
+        .child1{
+            z-index:2;
+            background: #0e7889;
+        }
+        .child2{
+            z-index:1;
+            background: #1f8941;
+        }
+    </style>
+</head>
+<body>
+    <section class="container1">Div1
+        <div class="child1">child1.1 z-index:2</div>
+        <div class="child1">child1.1 z-index:2</div>
+    </section>
+    <section class="container2">Div2
+        <div class="child2">child2.1  z-index:1</div>
+        <div class="child2">child2.1  z-index:1</div>
+    </section>
+</body>
+</html>

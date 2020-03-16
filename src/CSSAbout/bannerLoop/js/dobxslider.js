@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
 	jQuery('.bxslider').bxSlider({
 		mode : 'horizontal',		//幻灯片切换的方式  可选值: 'horizontal', 'vertical', 'fade'  默认值：horizontal
-		speed: 500,						//图片切换的时间（毫秒）   默认值：500
+		speed: 1500,						//图片切换的时间（毫秒）   默认值：500
 		startSlide:0,					//起始图片编号。 0-第一张图片，1-第二张图片……  默认值：0
 		captions:true,					//是否显示图片注释(注释内容在img的tiltle属性中)? true-显示，false-不显示。默认值：false
 		ticker: false,					//跑马灯效果。true-开启，false-关闭
