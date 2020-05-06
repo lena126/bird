@@ -13,7 +13,7 @@
 			var isAndroid = ua.indexOf('android') > -1 || ua.indexOf('adr') > -1; //android终端
 			if(isAndroid) {
 				console.log('android');
-				if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+				if (ua.match(/MicroMessenger/i) == 'micromessenger' || ua.match(/QQ/i) == "qq") {
 					console.log('微信');
 					return true;
 				}else{

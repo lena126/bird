@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c3598ee-ef1f-4280-bd79-86080dddbfca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scroll.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CSSAbout/lazyLoadImg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CSSAbout/loadmore.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CSSAbout/stackingContext/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CSSAbout/stackingContext/demo02.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CSSAbout/stackingContext/demo03.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CSSAbout/stackingContext/demo04.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CSSAbout/stackingContext/demo05.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CSSAbout/stackingContext/demo06.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsAbout/arguments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSSAbout/bannerLoop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSSAbout/bannerLoop/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSSAbout/bannerLoop/jquery.bxslider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSSAbout/bannerLoop/jquery.bxslider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSSAbout/bannerLoop/js/dobxslider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSSAbout/bannerLoop/js/dobxslider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSSAbout/bannerLoop/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSSAbout/bannerLoop/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CSSAbout/res-loadingout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSSAbout/res-loadingout.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,24 +18,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CSSAbout/stackingContext/demo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CSSAbout/bannerLoop/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="383">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CSSAbout/res-loadingout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -153,6 +141,7 @@
       <find>bxslider</find>
       <find>jquery.bxslider</find>
       <find>.get-started-container</find>
+      <find>缓慢加载</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,7 +171,6 @@
         <option value="$PROJECT_DIR$/src/jsAbout/res-share.html" />
         <option value="$PROJECT_DIR$/src/CSSAbout/test02.html" />
         <option value="$PROJECT_DIR$/src/CSSAbout/test04.html" />
-        <option value="$PROJECT_DIR$/src/CSSAbout/res-loadingout.html" />
         <option value="$PROJECT_DIR$/src/jsAbout/promise.html" />
         <option value="$PROJECT_DIR$/src/CSSAbout/test03.html" />
         <option value="$PROJECT_DIR$/src/nodejs/copy.js" />
@@ -205,8 +193,9 @@
         <option value="$PROJECT_DIR$/src/CSSAbout/loadmore.html" />
         <option value="$PROJECT_DIR$/src/CSSAbout/lazyLoadImg.js" />
         <option value="$PROJECT_DIR$/scroll.html" />
-        <option value="$PROJECT_DIR$/src/CSSAbout/bannerLoop/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/CSSAbout/bannerLoop/index.html" />
+        <option value="$PROJECT_DIR$/src/CSSAbout/res-loadingout.html" />
       </list>
     </option>
   </component>
@@ -217,9 +206,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="826" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -229,6 +217,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,7 +262,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,11 +358,13 @@
       <workItem from="1583464563421" duration="2161000" />
       <workItem from="1583575081112" duration="473000" />
       <workItem from="1584341975020" duration="383000" />
+      <workItem from="1584345356252" duration="365000" />
+      <workItem from="1588731064554" duration="243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116816000" />
+    <option name="totallyTimeSpent" value="117424000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,7 +379,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -401,7 +391,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961586" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3519207" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.18215613" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.18215613" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -489,13 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSSAbout/res-loadingout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="166" column="9" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -634,6 +617,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CSSAbout/stackingContext/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="216">
+            <caret line="9" selection-start-line="9" selection-end-line="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scroll.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -686,27 +686,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSSAbout/stackingContext/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CSSAbout/bannerLoop/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="383">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="216">
-            <caret line="9" selection-start-line="9" selection-end-line="9" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/CSSAbout/res-loadingout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
         </state>
       </provider>
     </entry>
