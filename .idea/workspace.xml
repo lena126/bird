@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c3598ee-ef1f-4280-bd79-86080dddbfca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jsAbout/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsAbout/app.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jsAbout/app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="190" column="18" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
+            <state relative-caret-position="600">
+              <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
             </state>
           </provider>
         </entry>
@@ -113,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>value</find>
       <find>lift_btn</find>
       <find>divText</find>
       <find>third</find>
@@ -143,6 +141,7 @@
       <find>download</find>
       <find>go-app</find>
       <find>webApp</find>
+      <find>visibilityChange</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -340,12 +339,12 @@
       <workItem from="1584341975020" duration="383000" />
       <workItem from="1584345356252" duration="365000" />
       <workItem from="1588731064554" duration="1218000" />
-      <workItem from="1588990952501" duration="9537000" />
+      <workItem from="1588990952501" duration="9912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127936000" />
+    <option name="totallyTimeSpent" value="128311000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -667,8 +666,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jsAbout/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="190" column="18" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
+        <state relative-caret-position="600">
+          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
         </state>
       </provider>
     </entry>

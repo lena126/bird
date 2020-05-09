@@ -181,15 +181,15 @@
     })
     $('.go-app').on('click', function (e) {
 
-        if(os.isPhone){
-            location.href =$('.go-app a').href;
-            setTimeout(function () {
-                location.href= 'https://www.okex.me/download';
-            },250);
-            setTimeout(function () {
-                location.reload();
-            },1000)
-        }else{
+        // if(os.isPhone){
+        //     location.href =$('.go-app a').href;
+        //     setTimeout(function () {
+        //         location.href= 'https://www.okex.me/download';
+        //     },250);
+        //     setTimeout(function () {
+        //         location.reload();
+        //     },1000)
+        // }else{
             // e.preventDefault();
             $('.pop-message-box').css('display', 'none');
             $('body').css('overflow', 'auto');
@@ -208,7 +208,7 @@
                     console.log('用户有浏览当前页面,正常发送报错信息');
                 }
             }, false);
-        }
+        // }
 
 
     })
