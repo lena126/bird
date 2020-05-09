@@ -136,6 +136,24 @@
     </div>
 </section>
 <script>
+    // 判断是电脑、平板、手机环境
+    const os = function () {
+        const ua = navigator.userAgent,
+            isWindowsPhone = /(?:Windows Phone)/.test(ua),
+            isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+            isAndroid = /(?:Android)/.test(ua),
+            isFireFox = /(?:Firefox)/.test(ua),
+            isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+            isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+            isPc = !isPhone && !isAndroid && !isSymbian;
+        return {
+            isTablet: isTablet,
+            isPhone: isPhone,
+            isAndroid: isAndroid,
+            isPc: isPc
+        };
+    }();
+
     // 各种浏览器兼容
     var hidden, visibilityChange;
     if (typeof document.hidden !== "undefined") {
@@ -162,28 +180,31 @@
         $('.go-app a').attr('href', linkUrl);
     })
     $('.go-app').on('click', function (e) {
-        location.href =$('.go-app a').href;
-        location.href= 'https://www.okex.me/download';
-        location.reload();
 
-        // e.preventDefault();
-        $('.pop-message-box').css('display', 'none');
-        $('body').css('overflow', 'auto');
-        const $el = $('#toast');
-        $el.addClass('hide').removeClass('fadeIn');
-        let timer = setTimeout(()=>{
-            $el.removeClass('hide').addClass('fadeIn');
-        }, 4000);
-        document.addEventListener(visibilityChange, function() {
-            if(document[hidden]){
-                // 用户没有浏览当前页面
-                console.log('用户没有浏览当前页面，清除定时器');
-                clearTimeout(timer);
-            }else{
-                // 用户正在浏览当前页面
-                console.log('用户有浏览当前页面,正常发送报错信息');
-            }
-        }, false);
+        if(os.isPhone){
+            location.href =$('.go-app a').href;
+            location.href= 'https://www.okex.me/download';
+        }else{
+            // e.preventDefault();
+            $('.pop-message-box').css('display', 'none');
+            $('body').css('overflow', 'auto');
+            const $el = $('#toast');
+            $el.addClass('hide').removeClass('fadeIn');
+            let timer = setTimeout(()=>{
+                $el.removeClass('hide').addClass('fadeIn');
+            }, 4000);
+            document.addEventListener(visibilityChange, function() {
+                if(document[hidden]){
+                    // 用户没有浏览当前页面
+                    console.log('用户没有浏览当前页面，清除定时器');
+                    clearTimeout(timer);
+                }else{
+                    // 用户正在浏览当前页面
+                    console.log('用户有浏览当前页面,正常发送报错信息');
+                }
+            }, false);
+        }
+
 
     })
     // 关闭当前弹窗
