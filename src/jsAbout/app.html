@@ -183,7 +183,12 @@
 
         if(os.isPhone){
             location.href =$('.go-app a').href;
-            location.href= 'https://www.okex.me/download';
+            setTimeout(function () {
+                location.href= 'https://www.okex.me/download';
+            },250);
+            setTimeout(function () {
+                location.reload();
+            },1000)
         }else{
             // e.preventDefault();
             $('.pop-message-box').css('display', 'none');
