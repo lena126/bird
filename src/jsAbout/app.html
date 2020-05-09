@@ -11,12 +11,17 @@
     <style>
         .main-container{
             width: 100%;
+            display: flex;
+            flex-wrap: wrap;
         }
         .main-container a{
             width: 200px;
             height: 50px;
             background: #666666;
             color: #fff;
+            line-height:50px;
+            margin:10px auto 20px auto;
+            text-align: center;
         }
         .pop-message-box {
             display: none;
@@ -147,9 +152,9 @@
         let timer = setTimeout(()=>{
             $el.removeClass('hide').addClass('fadeIn');
         }, 2000);
-        // window.onbeforeunload = function () {
-        //     clearTimeout(timer);
-        // }
+        window.onbeforeunload = function () {
+            clearTimeout(timer);
+        }
     })
     // 关闭当前弹窗
     $('.pop-container .close-box').on('click', function (e) {
