@@ -5,22 +5,159 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="//static.bafang.com/cdn/assets/okfe/libs/jquery/jquery1.12.4.min.js"></script>
     <title>调起APP</title>
     <style>
+        .main-container{
+            width: 100%;
+        }
         .main-container a{
-            width: 100px;
+            width: 200px;
             height: 50px;
             background: #666666;
             color: #fff;
+        }
+        .pop-message-box {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: url("https://static.bafang.com/cdn/assets/imgs/MjAyMDM/367D447C3FE17ECE77D25DDA088F79B7.png");
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .pop-container{
+            max-width: 308px;
+            margin: 150px auto 16px auto;
+            padding: 0 16px;
+        }
+        .pop-content{
+            background:rgba(255,255,255,1);
+            padding: 0 16px;
+            box-shadow:0px 1px 2px 0px rgba(0,0,0,0.06),0px 1px 3px 0px rgba(0,0,0,0.1);
+            border-radius:4px;
+        }
+        .close-box{
+            text-align: right;
+        }
+        button{
+            width:100%;
+            height:46px;
+            background:rgba(45,96,224,1);
+            border-radius:2px;
+            margin-bottom: 13px;
+            font-size:16px;
+            font-weight:500;
+            line-height:20px;
+        }
+        button a{
+            color:rgba(255,255,255,1);
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            line-height: 46px;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        .hide{
+            display: none;
+        }
+        @-webkit-keyframes fadeIn {
+            0% {opacity: 0.1; top: 50px;display: block;}
+            70% {opacity: 1; top: 80px;display: block;}
+            100% {opacity: 0; top: 80px;display: none;}
+        }
+        .fadeIn {
+            animation: fadeIn 1s;
+            animation-fill-mode: forwards;
+        }
+        #toast {
+            position: fixed;
+            left: 50%;
+            width: 100vw;
+            z-index: 10;
+            margin: 0 auto;
+            text-align: center;
+            transition: all 1s linear;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+        span {
+            padding: 7px 8px;
+            display: inline-block;
+            background: #fff;
+            color: red;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        b{
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            color: #fff;
+            background: red;
+            border-radius: 50%;
+            margin:0 5px;
+            line-height:10px;
         }
     </style>
 </head>
 <body>
 <div class="main-container">
-    <a href="okex://main/otc">法币</a>
-    <a href="okex://main/spot">币币</a>
-    <a href="okex://main/futures/option/trade">期权</a>
-    <a href="okex://main/futures/trade">交割</a>
+    <a class="banner-link" href="okex://main/otc">法币</a>
+    <a class="banner-link" href="okex://main/spot">币币</a>
+    <a class="banner-link" href="okex://main/futures/option/trade">期权</a>
+    <a class="banner-link" href="okex://main/futures/trade">交割</a>
 </div>
+<div id="toast" class="hide"><span><b>x</b>调起失败，请重试！</div>
+<section class="pop-message-box">
+    <div class="pop-container">
+        <div class="pop-content">
+            <div class="close-box">x</div>
+            <button class="download"><a href="https://www.okex.me/download">未安装去下载</a></button>
+            <button class="go-app"><a>已安装APP</a></button>
+        </div>
+    </div>
+</section>
+<script>
+    // 非APP环境
+    // 移动端打开判断是否下载APP，并跳转至页面
+    $('.banner-link').on('click', function (e) {
+        e.preventDefault();
+        $('.pop-message-box').css('display', 'block');
+        $('body').css('overflow', 'hidden');
+        const linkUrl = e.target.attributes.href.value;
+        $('.go-app a').attr('href', linkUrl);
+    })
+    $('.go-app').on('click', function (e) {
+        // e.preventDefault();
+        $('.pop-message-box').css('display', 'none');
+        $('body').css('overflow', 'auto');
+        const $el = $('#toast');
+        $el.addClass('hide').removeClass('fadeIn');
+        let timer = setTimeout(()=>{
+            $el.removeClass('hide').addClass('fadeIn');
+        }, 2000);
+        // window.onbeforeunload = function () {
+        //     clearTimeout(timer);
+        // }
+    })
+    // 关闭当前弹窗
+    $('.pop-container .close-box').on('click', function (e) {
+        setTimeout(()=>{
+            $('.pop-message-box').css('display', 'none');
+            $('body').css('overflow', 'auto');
+        }, 350)
+    })
+</script>
 </body>
 </html>
