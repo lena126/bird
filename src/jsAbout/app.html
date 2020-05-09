@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <script src="//static.bafang.com/cdn/assets/okfe/libs/jquery/jquery1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+
     <title>调起APP</title>
     <style>
         .main-container{
@@ -152,9 +154,9 @@
         let timer = setTimeout(()=>{
             $el.removeClass('hide').addClass('fadeIn');
         }, 2000);
-        window.onbeforeunload = function () {
-            clearTimeout(timer);
-        }
+        // window.onbeforeunload = function () {
+        //     clearTimeout(timer);
+        // }
     })
     // 关闭当前弹窗
     $('.pop-container .close-box').on('click', function (e) {
@@ -163,6 +165,38 @@
             $('body').css('overflow', 'auto');
         }, 350)
     })
-</script>
+
+
+
+    // 各种浏览器兼容
+    var hidden, visibilityChange;
+    if (typeof document.hidden !== "undefined") {
+        hidden = "hidden";
+        visibilityChange = "visibilitychange";
+    } else if (typeof document.mozHidden !== "undefined") {
+        hidden = "mozHidden";
+        visibilityChange = "mozvisibilitychange";
+    } else if (typeof document.msHidden !== "undefined") {
+        hidden = "msHidden";
+        visibilityChange = "msvisibilitychange";
+    } else if (typeof document.webkitHidden !== "undefined") {
+        hidden = "webkitHidden";
+        visibilityChange = "webkitvisibilitychange";
+    }
+
+    // 添加监听器，在title里显示状态变化
+    document.addEventListener(visibilityChange, function() {
+        if(document[hidden]){
+            // 用户没有浏览当前页面
+            console.log('用户没有浏览当前页面');
+        }else{
+            // 用户正在浏览当前页面
+            console.log('用户有浏览当前页面');
+        }
+    }, false);
+    console.log('用户有浏览当前页面',visibilityChange,document[hidden]);
+    var vConsole = new vConsole();
+    console.log('当前界面信息',visibilityChange,document[hidden]);
+  </script>
 </body>
 </html>
