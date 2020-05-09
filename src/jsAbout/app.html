@@ -167,23 +167,46 @@
         $('body').css('overflow', 'auto');
         const $el = $('#toast');
         $el.addClass('hide').removeClass('fadeIn');
-        let timer = setTimeout(()=>{
-            $el.removeClass('hide').addClass('fadeIn');
-        }, 4000);
+        // let timer = setTimeout(()=>{
+        //     $el.removeClass('hide').addClass('fadeIn');
+        // }, 4000);
         // window.onbeforeunload = function () {
         //     clearTimeout(timer);
         // }
-
         document.addEventListener(visibilityChange, function() {
             if(document[hidden]){
                 // 用户没有浏览当前页面
                 console.log('用户没有浏览当前页面，清除定时器');
-                clearTimeout(timer);
+                // clearTimeout(timer);
             }else{
                 // 用户正在浏览当前页面
                 console.log('用户有浏览当前页面,正常发送报错信息');
             }
         }, false);
+
+        var _clickTime = +(new Date());
+        function check(elsTime){
+            if(elsTime>3000 || document.hidden){
+                cb(1);
+            }else{
+                cb(0);
+            }
+        }
+
+        var _count =0,intHandle;
+        intHandle = setInterval(function(){
+            _count++;
+            var elsTime = +(new Date()) - _clickTime;
+            if(_count>=100 || elsTime > 3000){
+                clearInterval(intHandle);
+                console.log('执行过了很长时间',elsTime);
+                $el.removeClass('hide').addClass('fadeIn');
+            }else{
+                console.log('唤起APP成功了');
+            }
+            console.log('在执行ing');
+        },20)
+
     })
     // 关闭当前弹窗
     $('.pop-container .close-box').on('click', function (e) {
