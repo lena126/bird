@@ -136,6 +136,22 @@
     </div>
 </section>
 <script>
+    // 各种浏览器兼容
+    var hidden, visibilityChange;
+    if (typeof document.hidden !== "undefined") {
+        hidden = "hidden";
+        visibilityChange = "visibilitychange";
+    } else if (typeof document.mozHidden !== "undefined") {
+        hidden = "mozHidden";
+        visibilityChange = "mozvisibilitychange";
+    } else if (typeof document.msHidden !== "undefined") {
+        hidden = "msHidden";
+        visibilityChange = "msvisibilitychange";
+    } else if (typeof document.webkitHidden !== "undefined") {
+        hidden = "webkitHidden";
+        visibilityChange = "webkitvisibilitychange";
+    }
+
     // 非APP环境
     // 移动端打开判断是否下载APP，并跳转至页面
     $('.banner-link').on('click', function (e) {
@@ -153,10 +169,21 @@
         $el.addClass('hide').removeClass('fadeIn');
         let timer = setTimeout(()=>{
             $el.removeClass('hide').addClass('fadeIn');
-        }, 2000);
+        }, 4000);
         // window.onbeforeunload = function () {
         //     clearTimeout(timer);
         // }
+
+        document.addEventListener(visibilityChange, function() {
+            if(document[hidden]){
+                // 用户没有浏览当前页面
+                console.log('用户没有浏览当前页面，清除定时器');
+                clearTimeout(timer);
+            }else{
+                // 用户正在浏览当前页面
+                console.log('用户有浏览当前页面,正常发送报错信息');
+            }
+        }, false);
     })
     // 关闭当前弹窗
     $('.pop-container .close-box').on('click', function (e) {
@@ -168,33 +195,9 @@
 
 
 
-    // 各种浏览器兼容
-    var hidden, visibilityChange;
-    if (typeof document.hidden !== "undefined") {
-        hidden = "hidden";
-        visibilityChange = "visibilitychange";
-    } else if (typeof document.mozHidden !== "undefined") {
-        hidden = "mozHidden";
-        visibilityChange = "mozvisibilitychange";
-    } else if (typeof document.msHidden !== "undefined") {
-        hidden = "msHidden";
-        visibilityChange = "msvisibilitychange";
-    } else if (typeof document.webkitHidden !== "undefined") {
-        hidden = "webkitHidden";
-        visibilityChange = "webkitvisibilitychange";
-    }
+
 
     // 添加监听器，在title里显示状态变化
-    document.addEventListener(visibilityChange, function() {
-        if(document[hidden]){
-            // 用户没有浏览当前页面
-            console.log('用户没有浏览当前页面');
-        }else{
-            // 用户正在浏览当前页面
-            console.log('用户有浏览当前页面');
-        }
-    }, false);
-    console.log('用户有浏览当前页面',visibilityChange,document[hidden]);
     var vConsole = new VConsole();
     console.log('当前界面信息',visibilityChange,document[hidden]);
   </script>
